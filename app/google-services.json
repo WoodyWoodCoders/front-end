@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "939780751353",
+    "firebase_url": "https://snaapapp.firebaseio.com",
+    "project_id": "snaapapp",
+    "storage_bucket": "snaapapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939780751353:android:20589c9cd829ba61",
+        "android_client_info": {
+          "package_name": "fr.viacesi.woodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939780751353-r961mp2eq0rjf3vif41hh3mm70t72ki6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.viacesi.woodapp",
+            "certificate_hash": "e79dca61c227ecd25f1a3e27599af7978b1dc074"
+          }
+        },
+        {
+          "client_id": "939780751353-upddl1bq81e4ekkkd6q7nrorl5uvl76b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXj7IoYJn1ime6UX9ZtQhRCBALOX8Y82Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939780751353-upddl1bq81e4ekkkd6q7nrorl5uvl76b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
