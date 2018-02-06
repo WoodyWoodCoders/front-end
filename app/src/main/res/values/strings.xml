@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">WoodApp</string>
+    <string name="login">Login</string>
+    <string name="password">Mot de passe</string>
+    <string name="connection">Se connecter</string>
+    <string name="Moduledevis">Module devis</string>
+    <string name="devis">Nouveau devis</string>
+    <string name="devisName">Nom du devis</string>
+    <string name="devisReference">Référence du devis</string>
+    <string name="devisStatus">Status du devis</string>
+    <string name="devisClient">Client affecté au devis</string>
+    <string name="sendDevis">Sauvegarder le devis</string>
+    <string name="getClient">Choisir Client</string>
+    <string name="clientAffect">Client Affecté</string>
 </resources>

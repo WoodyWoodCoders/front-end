@@ -17,5 +17,4 @@ public interface UserAuthenticationHttpService {
     Call<Token> login(@Body AuthenticationRequest user);
     @GET(ApiConstants.PROFILE_URL)
     Call<User> profile();
-    //Call<Void> register(@Body RegisterRequest user);
 }

@@ -11,22 +11,22 @@ import org.json.JSONObject;
 
 public class Token {
 
-    private String data;
+    private String token;
 
     public Token(){
 
     }
 
-    public Token(String data){
-        this.data = data;
+    public Token(String token){
+        this.token = token;
     }
 
 
     public String getToken() {
-        return data;
+        return token;
     }
 
-    public void setToken(String data) {
-        this.data = data;
+    public void setToken(String token) {
+        this.token = token;
     }
 }

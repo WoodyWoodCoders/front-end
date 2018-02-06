@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainRed"
+    android:background="@color/colorPrimaryDark"
     tools:context=".activity.SplashScreenActivity">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:adjustViewBounds="false"
-        android:src="@drawable/ic_photo_camera_white_24dp"
+        android:src="@drawable/woodywoodcoders_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

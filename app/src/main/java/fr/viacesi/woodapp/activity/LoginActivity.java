@@ -10,12 +10,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.security.NoSuchAlgorithmException;
 
 import fr.viacesi.woodapp.R;
 import fr.viacesi.woodapp.business.ServiceFactory;
 import fr.viacesi.woodapp.constant.ApiConstants;
 import fr.viacesi.woodapp.http.callback.AppCallback;
 import fr.viacesi.woodapp.model.Token;
+import fr.viacesi.woodapp.utils.CryptageUtils;
 import fr.viacesi.woodapp.utils.SharedPreferencesUtils;
 
 public class LoginActivity extends Activity {
@@ -23,7 +27,7 @@ public class LoginActivity extends Activity {
     private static final String TAG = "LoginActivity";
     //Decalaration de variable
     Button bLogin;
-    EditText etUsername, etPassword;
+    private EditText etUsername, etPassword;
     public static TextView tvReponse;
     //check etat des editTexte
     private boolean etatUsername = false;
@@ -38,8 +42,10 @@ public class LoginActivity extends Activity {
         etPassword = (EditText) findViewById(R.id.etPassword);
         bLogin = (Button) findViewById(R.id.bLogin);
         tvReponse = (TextView) findViewById(R.id.tvReponse);
-
+        checkToken();
         etUsername.addTextChangedListener(new TextWatcher() {
+
+
 
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -95,16 +101,19 @@ public class LoginActivity extends Activity {
     }
 
 
-    public void sendLoginRequest(View View) {
-        ServiceFactory.getUserAuthenticationService().login(etUsername.getText().toString(), etPassword.getText().toString(), new AppCallback<Token>() {
+    public void sendLoginRequest(View View) throws NoSuchAlgorithmException {
+        ServiceFactory.getUserAuthenticationService().login(etUsername.getText().toString(), CryptageUtils.encodage(etPassword.getText().toString()), new AppCallback<Token>() {
             @Override
             public void onSuccess(Token obj, int code) {
                 Log.i(TAG,"code : " + code);
                 if(code == 200){
                     SharedPreferencesUtils.putString("token",obj.getToken());
                     Log.i(TAG,"Token : " + SharedPreferencesUtils.getString("token"));
+                    Toast.makeText(LoginActivity.this,"Sign in has Success", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     goHome = true;
+                }else{
+                    Toast.makeText(LoginActivity.this,"Sign in has Failed", Toast.LENGTH_SHORT).show();
                 }
                 goHome = false;
 
@@ -120,6 +129,14 @@ public class LoginActivity extends Activity {
 
 
 
+    }
+
+    public void checkToken(){
+        /*
+        if(SharedPreferencesUtils.getString("token") != null){
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        }
+        */
     }
     }
 
